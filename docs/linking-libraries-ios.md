@@ -61,4 +61,15 @@ What that means is, are you using this library on the native side or only in Jav
 
 If you do need to call it from native, then we need to know the library's headers. To achieve that you have to go to your project's file, select `Build Settings` and search for `Header Search Paths`. There you should include the path to your library. (This documentation used to recommend using `recursive`, but this is no longer recommended, as it can cause subtle build failures, especially with CocoaPods.)
 
+### Troubleshooting Steps 
+
+#### RCTPushNotificationManager.h file not found
+This error might be visible due to multiple reasons. But if this occured right after you linking a library, you might be able to try following options to sort it out. 
+ 
+* try to link the library manually as mensioned in this post.
+* header search path - https://github.com/facebook/react-native/issues/3831#issuecomment-157654578 
+* Copy relevant modules content to a folder insider `ios` directory, remove js files. Then drag and drop to your project/Libraries folder as mensioned in this document.
+* Upgrade/Downgrade cocoapods version. 
+
+
 ![](/react-native/docs/assets/AddToSearchPaths.png)
